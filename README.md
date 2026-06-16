@@ -1,27 +1,27 @@
 # Tizpo Front-End Folder Structure
 
-in Tizpo Web App, We have three services like:
+in **Tizpo Web App**, We have __three services__ like:
 
 - Seller Panel
 - Store
 - Admin Panel/Affiliate Panel
 
-we should to have three source codes for theese apps.
+we should to have **three source** codes for theese apps.
 
-I suggest this structure at All:
+I suggest this `structure` at All:
 
-1.  «app» folder for Web Application source
-2.  «components» folder for Website Section Components
-3.  «features» folder for "Feature-Sliced" design
-4.  «lib» folder for getting datas from 'backend'
-5.  «public» folder for static files like "images" and "fonts"
+1.  `«app»` folder for **Web Application** source
+2.  `«components»` folder for **Website Section Components**
+3.  `«features»` folder for **"Feature-Sliced"** design
+4.  `«lib»` folder for getting **datas** from __'backend'__
+5.  `«public»` folder for **static files** like __"images"__ and __"fonts"__
 
 ---
 
 ### App Folder
 
-in this folder, we should to develop pages, import components and use it like UI design.
-for example, in seller panel we should to have "auth","dashboard" and "globals.css" file;
+in this folder, we should to **develop pages**, **import components** and __use it__ like **UI design**.
+for example, in `seller panel` we should to have **"auth"**,**"dashboard"** and **"globals.css"** file;
 in 'auth' and other app childs we have:
 
 - page.ts
@@ -30,32 +30,32 @@ in 'auth' and other app childs we have:
 
 ### Components Folder
 
-in this folder we have some other folders that bring every section of website components.
-for example, in seller panel, we have a components folder that brings "ui", "layout" and "common" folders.
+in this folder we have some __other folders__ that bring every section of website components.
+for example, in **seller panel**, we have a components folder that brings `"ui"`, `"layout"` and `"common"` folders.
 
-- #### UI: this folder brings components that are related to ui components like "button", "inputs" .etc
-- #### Layout: this folder brings components that are related to layouts components like "logo image" "menu items" .etc
-- #### Common: this folder brings components that are very useful and popular in project
+- #### **`UI`**: this folder brings __components__ that are related to **ui components** like __"button"__, __"inputs"__ .etc
+- #### **`Layout`**: this folder brings __components__ that are related to **layouts components** like __"logo image"__, __"menu items"__ .etc
+- #### **`Common`**: this folder brings __components__ that are **very useful** and **popular** in project.
 
 ### Features Folder
 
-in this folder we should to develop features like "products" and "orders" components.
+in this folder we should to **develop features** like `"products"` and `"orders"` __components__.
 
 ### Lib Folder
 
-in this folder, we should to get datas from backend services (API's) to client side.
-for example we have "api.ts" file in this folder that gets related api from backend.
+in this folder, we should to get **datas** from `backend services (API's)` to __client side__.
+for example we have `"api.ts"` file in this folder that gets related __`api`__ from **backend**.
 
 ### Public Folder
 
-in this folder, we should to upload and use static files like "images", "fonts" and other static files.
-for example we should to upload the brand logo in this folder, because we can use it easier in development.
+in this folder, we should to **upload** and use `static files` like `"images"`, `"fonts"` and __other static__ files.
+for example we should to **upload** the `brand logo` in this folder, because we can use it **easier** in development.
 
 ---
 
 ## Structures
 
-in this section of document, we'll review the sample structure that I suggested for using in development.
+in this **section of document**, we'll review the sample structure that I suggested for using in **development**.
 
 ### Seller Panel
 
