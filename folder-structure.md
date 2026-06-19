@@ -1,123 +1,186 @@
-# Tizpo Front-End Folder Structure
+# فولدر استراکچر پروژه تیزپو
 
-in **Tizpo Web App**, We have __three services__ like:
+در این قسمت قرار است درباره استراکچر فولدر بندی پروژه تیزپو توضیحات جامع و کاملی ارائه شود.
 
-- Seller Panel
-- Store
-- Admin Panel/Affiliate Panel
+## بخش های پروژه
 
-we should to have **three source** codes for theese apps.
+این وب سرویس قرار است به سه پنل مجزا تقسیم شود:
 
-I suggest this `structure` at All:
+- پنل فروشندگان
+- فروشگاه
+- پنل ادمین/ پنل افیلیت (همکاری)
 
-1.  `«app»` folder for **Web Application** source
-2.  `«components»` folder for **Website Section Components**
-3.  `«features»` folder for **"Feature-Sliced"** design
-4.  `«lib»` folder for getting **datas** from __'backend'__
-5.  `«public»` folder for **static files** like __"images"__ and __"fonts"__
+## تکنولوژی های مورد استفاده
 
----
+به صورت کلی برای اجرای این سه پنل باید از فریمورک Next Js و از App Router استفاده کنید.
 
-### App Folder
+این پروژه از زبان برنامه نویسی Typescript برای مدیریت تایپ ها و طراحی سرویس های مختلف استفاده می کند.
 
-in this folder, we should to **develop pages**, **import components** and __use it__ like **UI design**.
-for example, in `seller panel` we should to have **"auth"**,**"dashboard"** and **"globals.css"** file;
-in 'auth' and other app childs we have:
+برای دریافت API از سمت سرور و بک اند باید از کتابخانه axios استفاده کنید.
 
-- page.ts
-- layout.ts
-- OTHER ROUTES
+برای طراحی بخش های مختلف پروژه بر اساس طرح رابط کاربری (Ui) باید از Tailwind استفاده کنید.
 
-### Components Folder
+- از Route-Group برای جداسازی Layout های متفاوت استفاده کنید
 
-in this folder we have some __other folders__ that bring every section of website components.
-for example, in **seller panel**, we have a components folder that brings `"ui"`, `"layout"` and `"common"` folders.
+## قواعد نامگذاری در پروژه
 
-- #### **`UI`**: this folder brings __components__ that are related to **ui components** like __"button"__, __"inputs"__ .etc
-- #### **`Layout`**: this folder brings __components__ that are related to **layouts components** like __"logo image"__, __"menu items"__ .etc
-- #### **`Common`**: this folder brings __components__ that are **very useful** and **popular** in project.
+در سورس کد این پروژه به صورت کلی دو نوع نامگذاری متفاوت مشاهده می شود.
 
-### Features Folder
+- نامگذاری فولدر ها
+- نامگذاری فایل ها
+- نامگذاری کامپوننت ها
 
-in this folder we should to **develop features** like `"products"` and `"orders"` __components__.
+### نامگذاری فولدر ها
 
-### Lib Folder
+برای نامگذاری فولدر ها در سورس کد، باید از مدل kebab-case استفاده کنید؛ به طور مثال:
 
-in this folder, we should to get **datas** from `backend services (API's)` to __client side__.
-for example we have `"api.ts"` file in this folder that gets related __`api`__ from **backend**.
+/product-card  
+/product-list
 
-### Public Folder
+- باید کلمات را با استفاده از «-» جدا کنید
 
-in this folder, we should to **upload** and use `static files` like `"images"`, `"fonts"` and __other static__ files.
-for example we should to **upload** the `brand logo` in this folder, because we can use it **easier** in development.
+### نامگذاری فایل ها
 
----
+برای نامگذاری فایل ها در سورس کد، باید از مدل camelCase استفاده کنید؛ به طور مثال:
 
-## Structures
+product.tsx  
+login.tsx
 
-in this **section of document**, we'll review the sample structure that I suggested for using in **development**.
+### نامگذاری کامپوننت ها
 
-### Seller Panel
+برای نامگذاری کامپوننت ها باید از مدل PascalCase استفاده کنید.  
+به طور مثال :
 
-`tizpoo-seller-panel/`
+ProductCard.tsx
+LoginForm.tsx
 
-├── app/ # App Router  
-│ ├── (auth)/  
-│ ├── (dashboard)/  
-│ │ ├── layout.tsx  
-│ │ ├── products/  
-│ │ ├── orders/  
-│ │ ├── analytics/  
-│ │ └── settings/  
-│ └── globals.css  
-├── components/  
-│ ├── ui/ # کامپوننت‌های محلی  
-│ ├── layout/  
-│ └── common/  
-├── features/ # Feature-Sliced Design  
-│ ├── products/  
-│ ├── orders/  
-│ └── ...  
-├── lib/  
-│ ├── api.ts # Client برای فراخوانی Backend  
-│ ├── utils.ts  
-│ └── auth.ts  
-├── hooks/  
-├── types/  
-├── public/  
-├── next.config.ts  
-├── tailwind.config.ts  
-├── tsconfig.json  
-├── package.json  
-└── .env.local
+#### جمع بندی قواعد نامگذاری
 
-### Store Structure
+- فولدر ها: به صورت kebab-case
+- فایل ها: به صورت camelCase
+- کامپوننت ها: به صورت PascalCase
 
-`tizpoo-store/`
+## فولدر های اصلی
 
-├── app/  
-│ ├── (shop)/  
-│ ├── products/  
-│ ├── cart/  
-│ ├── checkout/  
-│ └── category/[slug]/  
-├── components/  
-├── features/  
-├── lib/api.ts  
-├── next.config.ts  
-├── tailwind.config.ts  
-└── ...
+در این بخش به فولدر های اصلی فولدر استراکچر پروژه تیزپو می پردازیم.
 
-### Admin Panel
+- «app»: در این فولدر باید سورس کد کامپوننت های اصلی و main وبسایت قرار گیرد.
+- «components»: در این فولدر باید کامپوننت ها به صورت اصولی در دسته ی مورد نظر خود قرار گیرند.
+- «hooks»: در این فولدر باید هوک هایی که به صورت کاستوم و سفارشی برای وب سرویس ایجاد می شوند قرار گیرند.
+- «lib»: در این فولدر باید با استفاده از کتابخانه axios اطلاعات مختلف را به صورت مجزا و در فایل های مختلف از سمت سرور و API ها دریافت کنید.
+- «public»: در این فولدر باید تمامی فایل های استاتیک پروژه اعم از فونت ها، تصاویر، آیکون ها و ... که نیازی به تغییر ندارند و اینامیک نیستند قرار بگیرند.
+- «types»: در این فولدر باید تمامی تایپ های اختصاصی و سفارشی که توسط Typescript تولید و توسعه داده می شوند به صورت مجزا قرار بگیرند.
 
-`tizpoo-admin/  `
+در ادامه به فایل/فولدر های درون این فولدر ها اشاره می شود.
 
-├── app/  
-│ ├── (admin)/  
-│ │ ├── users/  
-│ │ ├── sellers/  
-│ │ ├── transactions/  
-│ │ └── ...  
-├── components/  
-├── features/  
-└── ...
+## اجزای فولدر های اصلی
+
+در این بخش به اجزای فولدر هایی که در بخش قبلی پرداخته شد، بپردازیم.
+
+### اجزای فولدر app
+
+در این فولدر باید Route ها به صورت Group شده به صورت زیر قرار بگیرند.
+
+مثال:
+
+├───app  
+│ ├───(auth)  
+│ │ └───login  
+│ └───(store)  
+│ ├───cart  
+│ ├───catalog  
+│ └───product-catalog
+
+همانطور که در بالا به استراکچر مورد نظر فولدر app پرداخته شد، باید Route ها با استفاده از Route-Group دسته بندی شوند و در دسته ای قرار بگیرند که مربوط به layout موردنظر آن Route است.
+
+در این فولدر، حالت استاندارد Next JS مورد نظر ما است و در این فولدر دو فایل page.tsx و layout.tsx به صورت مادر در این روت قرار دارند و در ادامه به دلیل Route-Group بودن روت ها می توانید از این دو فایل به صورت اختصاصی استفاده کنید.
+
+### اجزای فولدر components
+
+در این فولدر باید کامپوننت ها به صورت دسته بندی شده در فولدر مورد نظر خود قرار بگیرند.
+
+اجزای فولدر components :
+
+├───components  
+│ ├───layout  
+│ ├───section  
+│ │ ├───catalog  
+│ │ │ └───components  
+│ │ ├───common  
+│ │ │ ├───product-list copy  
+│ │ │ │ └───components  
+│ │ │ └───productList  
+│ │ │ └───components  
+│ │ └───login  
+│ └───ui
+
+یک استراکچر ساده برای مثال در بالا برای شما آورده شده است.
+
+فولدر components دارای سه فولدر اصلی است :
+
+- layout: در این فولدر باید کامپوننت های مربوط به layout مانند Header و Footer قرار بگیرد.
+- section: در این فولدر باید کامپوننت های نهایی هر سکشن قرار بگیرد؛ مانند Hero و ...
+- ui: در این فولدر، کامپوننت هایی قرار می گیرند که مربوط به کامپوننت های المنت ها هستند مانند Button و Input و ...
+
+هر کدام از این فولدر ها، دارای اجزای خاصی هستند که در بخش بعدی به آنها پرداخته می شود.
+
+#### اجزای فولدر layout
+
+در این فولدر به طور کلی باید دو کامپوننت اصلی وجود داشته باشد، به اضافه ی کامپوننت هایی که در ساخت این کامپوننت ها نقش داشته اند.
+
+به طور مثال :
+
+├───layout  
+│ ├───Header.tsx  
+│ ├───Footer.tsx
+
+#### اجزای فولدر section
+
+در این فولدر باید کامپوننت های نهایی هر سکشن قرار بگیرد.  
+به طور مثال:
+
+│ ├───section  
+│ │ ├───catalog  
+│ │ │ └───components  
+│ │ ├───common  
+│ │ │ ├───product-list copy  
+│ │ │ │ └───components  
+│ │ │ └───productList  
+│ │ │ └───components  
+│ │ └───login
+
+هر سکشن مانند فولدر نمونه catalog یک فولدر مجزا برای خود دارد.
+
+در فولدر common باید کامپوننت هایی که بین چندین سکشن مشترک هستند را در این فولدر قرار بدهیم.
+
+هر کامپوننتی که در فولدر common قرار می گیرد، دارای یک فولدر مجزا است.  
+در فولدر کامپوننت، یک فولدر component وجود دارد برای اینکه کامپوننت های مورد نیاز هر کامپوننت را درون این فولدر قرار دهیم.
+
+- برای بهتر متوجه شدن نکات بالا، به نمونه ی استراکچر نگاه کنید
+
+#### اجزای فولدر ui
+
+در این فولدر به صورت کلی باید کامپوننت المنت هایی را توسعه دهیم که عناصر ui هستند.  
+به طور مثال در این فولدر باید کامپوننت های Button، Input، Heading و ... توسعه داده بشود.
+
+#### اجزای فولدر hooks
+
+در این فولدر به صورت کلی هوک های سفارشی قرار می گیرند.
+
+هر هوک باید فولدر مختص به خود را داشته باشد و فایل های مربوط به آن هوک باید درون آن فولدر قرار بگیرد.
+
+#### اجزای فولدر lib
+
+در این فولدر به صورت کلی باید فایل هایی که api های مختلف را از سمت سرور دریافت می کنند، قرار بگیرد.
+
+در این فولدر به طور پیشفرض سه فایل وجود دارد:
+
+- api.ts: در این فایل باید اطلاعات اصلی وبسایت را دریافت کنید
+- utils.ts: در این فایل باید از api مورد نظر فانکشن ها و توابعی که در روند وبسایت تاثیر دارند دریافت بشود.
+- auth.ts: در این فایل باید درخواست ها و دریافت های مربوط به روند ورود و ثبت نام کاربر قرار گیرد.
+
+## قواعد فایل های استاتیک
+
+تمامی فونت ها در صورت امکان باید با فرمت woff2 و در نبود این فرمت از اکستنشن woff استفاده شود.
+
+برای تصاویر درون صفحات باید از فرمت webp، برای آیکون ها از فرمت svg و در آخر برای favicon باید از فرمت ico استفاده شود.
